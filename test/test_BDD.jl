@@ -1,16 +1,16 @@
 using Test
-using BDD
+using BDDUtils
 
-@testset "BDD.BitSet" begin
-    set = BDD.BitSet()
+@testset "BDDUtils.BitSet" begin
+    set = BDDUtils.BitSet()
     @test isempty(set)
-    @test sprint(show, MIME"text/plain"(), set) == "Dionysos.Utils.BDD.BitSet with 0 bits"
+    @test sprint(show, MIME"text/plain"(), set) == "BDDUtils.BitSet with 0 bits"
     list = [1, 10, 5, 1, 4, 8, 3, 4, 2, 14, 28, 13]
     m = maximum(list)
     for i in 0:m
         @test !(i in set)
     end
-    @test sprint(show, MIME"text/plain"(), set) == "Dionysos.Utils.BDD.BitSet with 0 bits"
+    @test sprint(show, MIME"text/plain"(), set) == "BDDUtils.BitSet with 0 bits"
     @test collect(set) isa Vector{Int}
     @test isempty(collect(set))
     expected = BitSet()
@@ -28,10 +28,10 @@ using BDD
     @test !isempty(set)
     @test isempty(empty!(set))
     @test isempty(set)
-    @test sprint(show, MIME"text/plain"(), set) == "Dionysos.Utils.BDD.BitSet with 5 bits"
+    @test sprint(show, MIME"text/plain"(), set) == "BDDUtils.BitSet with 5 bits"
     push!(set, 40)
     @test sprint(show, MIME"text/plain"(), set) in [
-        "Dionysos.Utils.BDD.BitSet with 6 bits",       # Julia v1.0
-        "Dionysos.Utils.BDD.BitSet with 6 bits:\n  40", # Julia v1.5
+        "BDDUtils.BitSet with 6 bits",       # Julia v1.0
+        "BDDUtils.BitSet with 6 bits:\n  40", # Julia v1.5
     ]
 end

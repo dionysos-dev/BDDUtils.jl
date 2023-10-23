@@ -1,4 +1,4 @@
-module BDD
+module BDDUtils
 
 using CUDD
 
