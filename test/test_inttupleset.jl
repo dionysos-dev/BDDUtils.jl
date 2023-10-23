@@ -1,10 +1,9 @@
 module TestMain
 
 using Test
-using Dionysos
+using BDD
 using CUDD
 
-BDD = Dionysos.Utils.BDD
 @testset "IntTupleSet" begin
     set = BDD.IntTupleSet{3, Int16}()
     @test isempty(set)

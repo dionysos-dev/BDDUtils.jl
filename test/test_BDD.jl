@@ -1,6 +1,6 @@
 using Test
-using Dionysos
-BDD = Dionysos.Utils.BDD
+using BDD
+
 @testset "BDD.BitSet" begin
     set = BDD.BitSet()
     @test isempty(set)
